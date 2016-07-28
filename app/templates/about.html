@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<script type="text/javascript">
+  document.getElementById("menu-about").className = "active";
+</script>
+<style media="screen">
+  h1 {
+    font: 22px helvetica;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
+<h1>Application created by Alexander D for test task.</h1>
+<div id="description">
+  <p>
+    When stis application starts, it takes .json file from
+     <a href="http://media.mongodb.org/zips.json">http://media.mongodb.org/</a>
+    and loads it into MongoDB.
+    On each request to home directory of the application, it sends POST ajax request to
+    backeand. Request is been handled with flask, that asks MongoDB for 20 most populated cities,
+    stored in it. After this operation, response with a json, containing data for graph built
+    is send to the client, where nvd3 js transorms it into a graphs.
+  </p>
+</div>
+<style media="screen">
+  #description{
+    font: 18px helvetica;
+    word-wrap: break-word;
+    text-align: left;
+    width: 80%;
+    margin-left: 5%;
+  }
+</style>
+{% endblock %}

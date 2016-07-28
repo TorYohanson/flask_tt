@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<script type="text/javascript">
+  document.getElementById("menu-translation").className = "active";
+</script>
+<style media="screen">
+  h1 {
+    font: 22px helvetica;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
+<h1>This is a text translation, made for a test task by Alexander D.</h1>
+<div class="description">
+  <p>
+    Thankfully, the data is already in a simple CSV format and does not require
+    much cleansing or other preparation to be used with Spark MLlib. Later, it
+    will be of interest to explore some transformations of the data, but it can
+    be used as is to start. The covtype.data file should be extracted and copied
+    into HDFS. This chapter will assume that the file is available at /user/ds/.
+    Start spark-shell.
+  </p>
+  <p>
+    The Spark MLlib abstraction for a feature vector is known as a LabeledPoint,
+    which consists of a Spark MLlib Vector of features, and a target value, here
+    called the label. The target is a Double value, and Vector is essentially an
+    abstraction on top of many Double values. This suggests that LabeledPoint is
+    only for numeric features. It can be used with categorical features, with
+    appropriate encoding.One such encoding is one-hot or 1-of-n encoding, in
+    which one categorical feature that takes on N distinct values becomes N
+    numeric features, each taking on the value 0 or 1. Exactly one of the N
+    values has value 1, and the others are 0. For example, a categorical feature
+    for weather that can be cloudy, rainy, or clear would become three numeric
+    features, where cloudy is represented by 1,0,0; rainy by 0,1,0; and so on.
+    These three numeric features might be thought of as is_cloudy, is_rainy,
+    and is_clear features. Another possible encoding simply assigns a distinct
+    numeric value to each possible value of the categorical feature. For example,
+    cloudy may become 1.0, rainy 2.0, and so on.
+  </p>
+</div>
+<hr>
+<div class="description">
+  <p>
+    Благодарю тому, что данные уже представлены в простом формате CSV, нет
+    необходимости в их большей очистке или других приготовлениях перед использованием
+    в Spark MLlib. Позже, будет интересно исследовать некоторые превращения этих
+    данных, но, на начальном этапе, они могут быть использованы в текущем виде.
+    Файл <i>covtype.data</i> необходимо извлечь и скопировть на HDFS.
+    Данная глава предполагает, что файл будет доступен в <i>/user/ds/</i>.
+    Далее, запустите консоль spark.
+  </p>
+  <p>
+    Абстракция Spark MLlib для признакового описания объекта, известная как
+    LabeledPoint и состоящая из вектора признаков Spark MLlib и целевых значений,
+    далее будет называться ярлыком. Целевым значением являются числа с плавающей
+    запятой, а вектор признаков, по существу, - абстракция, на вершине многих
+    подобных чисел. Это предполагает, что LabeledPoint может быть использовано
+    только для числовых значений. Оно может быть использовано для признаков
+    категорий, с соответствующей кодировкой. Одна из таких - унитарный код,
+    в котором один признак категории, принимающий N-различных значений
+    преобразовывается в N-числовых признаков, каждый из которых представлен
+    значением 0 или 1. Только одно из N-значений представлено 1, тогда как
+    остальные - 0. К примеру, признаками категорий для погоды, которая может быть 
+    облачной, дождливой или ясной, станут три числовых значение, где облачность
+    представлена 1,0,0; дождливость - 0,1,0 и т.д. Эти три числовых признака
+    можно представить как будет-ли-облачно, будет-ли-дождливо и будет-ли-ясно.
+    Другая возможная кодировка просто присваивает различные числовые значения
+    каждому возможному признаку категорий. К примеру, облачно может стать 1.0,
+    дождливо - 2.0 и т.д.
+  </p>
+
+</div>
+<style media="screen">
+  .description{
+    font: 18px helvetica;
+    word-wrap: break-word;
+    text-align: left;
+    width: 80%;
+    margin-left: 5%;
+  }
+</style>
+{% endblock %}

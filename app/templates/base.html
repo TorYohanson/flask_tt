@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+      <meta charset="utf-8">
+      <title>{{title}} - Test Stat</title>
+    {% else  %}
+      <meta charset="utf-8">
+      <title>City Stat</title>
+    {% endif %}
+  <style media="screen">
+  html, body {
+    position: absolute;
+    padding: 0px;
+    height: 98%;
+    width: 99.5%;
+  }
+  </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="/static/menu.css" rel="stylesheet" type="text/css" charset="utf-8">
+  <ul id="menu-bar">
+    <li class="" id="menu-home"><a href="/">Home</a></li>
+    <li class="" id="menu-translation"><a href="/translation">Translation</a></li>
+    <li class="" id="menu-about"><a href="/about">About</a></li>
+
+  </ul>
+  <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>
