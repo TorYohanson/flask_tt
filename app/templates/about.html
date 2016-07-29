@@ -13,13 +13,13 @@
 <h1>Application created by Alexander D for test task.</h1>
 <div id="description">
   <p>
-    When stis application starts, it takes .json file from
+    When this application starts, it takes .json file from
      <a href="http://media.mongodb.org/zips.json">http://media.mongodb.org/</a>
     and loads it into MongoDB.
     On each request to home directory of the application, it sends POST ajax request to
-    backeand. Request is been handled with flask, that asks MongoDB for 20 most populated cities,
+    backend. Request is been handled with flask, that asks MongoDB for 20 most populated cities,
     stored in it. After this operation, response with a json, containing data for graph,
-    is send to the client, where nvd3.js transorms it into a visible graphs.
+    is send to the client, where nvd3.js transforms it into a visible graphs.
   </p>
   <p>GitHub repository - <a href="https://github.com/TorYohanson/flask_tt">Flask test task</p>
 </div>
