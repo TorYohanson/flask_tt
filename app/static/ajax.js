@@ -40,6 +40,7 @@ ajax.send = function (url, callback, method, data, async) {
     };
     if (method == 'POST') {
         x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // Adds csrftoken to the header.
         x.setRequestHeader("X-CSRFToken", csrftoken)
     }
     x.send(data)

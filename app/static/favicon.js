@@ -1,3 +1,5 @@
+// Creates favicon.ico
+
 var faviconCanvas = document.createElement('canvas');
 faviconCanvas.width = 16;
 faviconCanvas.height = 16;

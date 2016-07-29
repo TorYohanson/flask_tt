@@ -89,3 +89,4 @@ ENV/
 .ropeproject
 flask/
 *.pyc
+*.idea

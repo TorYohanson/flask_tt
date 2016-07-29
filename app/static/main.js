@@ -1,8 +1,8 @@
 init();
 
 function init(){
+  // Asks flask server for a JSON with data.
   data = ajax.post('/get_most_populated', '', function(raw_data) {
-    //data_json = JSON.parse(raw_data);
     data_json = [];
     data_json.push(JSON.parse(raw_data));
     console.log(data_json);
@@ -15,16 +15,15 @@ function init(){
             .duration(250)
             .margin({top: 30,right: 50, left: 175, bottom: 50})
             .stacked(true)
-            .showValues(true)           //Show bar value next to each bar.
-            .tooltips(true)             //Show tooltips on hover.
-            //.transitionDuration(350)
+            .showValues(true)
+            .tooltips(true)
             .showControls(true);
 
         chart.yAxis.tickFormat(d3.format(',.2f'));
 
         chart.yAxis.axisLabel('City');
 
-        chart.xAxis.axisLabel('Population').axisLabelDistance(90);
+        chart.xAxis.axisLabel('Cities').axisLabelDistance(90);
         d3.select('#chart1 svg')
             .datum(data_json)
             .call(chart);
